@@ -1,0 +1,1169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="mobile-web-app-capable" content="yes"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="theme-color" content="#0b1310"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;HockeyTraining Planner&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>:root{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--ink:#0b1310;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--panel:#121a16;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--panel-2:#1a2420;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--panel-3:#223028;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--turf:#14532d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--turf-light:#1a6238;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--line:#f3f7f1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--accent:#ff8a3d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--accent-ink:#2a1200;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--blue:#4d8dff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--danger:#ff5a5f;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--text:#eaf2ec;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--muted:#8fa79a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--hairline:#26352c;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--safe-top:env(safe-area-inset-top,0px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>--safe-bottom:env(safe-area-inset-bottom,0px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>html,body{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin:0;padding:0;height:100%;overflow:hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:var(--ink);color:var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>-webkit-user-select:none;user-select:none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>overscroll-behavior:none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#app{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position:fixed;inset:0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display:flex;flex-direction:column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>height:100dvh;width:100vw;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:var(--ink);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------- TOP BAR ---------- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#topbar{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex:none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:calc(var(--safe-top) + 8px) 10px 8px 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:linear-gradient(180deg,#0f1815,#121a16);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-bottom:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display:flex;flex-direction:column;gap:8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#topbar-row1{display:flex;align-items:center;gap:8px;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.icon-btn{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width:36px;height:36px;flex:none;border-radius:10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:var(--panel-2);border:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color:var(--text);display:flex;align-items:center;justify-content:center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size:17px;touch-action:manipulation;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.icon-btn:active{background:var(--panel-3);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#exercise-title{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex:1;min-width:0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size:16px;font-weight:700;letter-spacing:.2px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>white-space:nowrap;overflow:hidden;text-overflow:ellipsis;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:8px 10px;border-radius:10px;background:var(--panel-2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#exercise-title:active{background:var(--panel-3);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#topbar-row2{display:flex;align-items:center;gap:6px;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.pill-group{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display:flex;background:var(--panel-2);border:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-radius:10px;overflow:hidden;flex:none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.pill{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:7px 10px;font-size:12px;font-weight:700;color:var(--muted);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>letter-spacing:.3px;text-transform:uppercase;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.pill.active{background:var(--accent);color:var(--accent-ink);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#zoom-group{margin-left:auto;display:flex;align-items:center;gap:0;background:var(--panel-2);border:1px solid var(--hairline);border-radius:10px;overflow:hidden;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#zoom-group button{width:32px;height:32px;background:transparent;border:none;color:var(--text);font-size:18px;font-weight:700;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#zoom-group button:active{background:var(--panel-3);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#zoom-label{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);width:42px;text-align:center;}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------- CANVAS ---------- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#canvas-wrap{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex:1;position:relative;min-height:0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>radial-gradient(120% 90% at 50% -10%, #17251d 0%, var(--ink) 60%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>overflow:hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#field{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position:absolute;inset:0;width:100%;height:100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>touch-action:none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display:block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#hint{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position:absolute;left:50%;bottom:10px;transform:translateX(-50%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:rgba(10,16,13,.72);border:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:6px 12px;border-radius:20px;font-size:12px;color:var(--muted);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>pointer-events:none;white-space:nowrap;transition:opacity .3s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------- CONTEXT BAR ---------- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#contextbar{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex:none;display:none;gap:8px;align-items:center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:8px 10px;background:var(--panel);border-top:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>overflow-x:auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#contextbar.show{display:flex;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.swatch{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width:30px;height:30px;border-radius:50%;flex:none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border:2px solid transparent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.swatch.selected{border-color:var(--text);box-shadow:0 0 0 2px var(--accent);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.ctx-btn{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex:none;padding:0 12px;height:32px;border-radius:16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:var(--panel-3);border:1px solid var(--hairline);color:var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-size:12px;font-weight:700;display:flex;align-items:center;gap:5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.ctx-btn.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.ctx-btn.danger{background:rgba(255,90,95,.12);color:#ff8b8f;border-color:rgba(255,90,95,.4);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.ctx-sep{width:1px;align-self:stretch;background:var(--hairline);flex:none;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#sizeSlider{width:90px;flex:none;accent-color:var(--accent);}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------- BOTTOM TOOLBAR ---------- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#toolbar{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex:none;display:flex;gap:6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:8px 8px calc(8px + var(--safe-bottom)) 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:linear-gradient(180deg,#121a16,#0e1512);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>border-top:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>overflow-x:auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.tool{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>flex:1;min-width:56px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:7px 2px;border-radius:12px;background:transparent;border:1px solid transparent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color:var(--muted);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.tool .glyph{font-size:19px;line-height:1;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.tool .lbl{font-size:9.5px;font-weight:700;letter-spacing:.2px;text-transform:uppercase;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.tool.active{background:var(--panel-3);border-color:var(--accent);color:var(--accent);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.tool:active{background:var(--panel-2);}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------- SIDEBAR ---------- */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#sidebar-backdrop{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transition:opacity .22s;z-index:40;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#sidebar-backdrop.show{opacity:1;pointer-events:auto;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#sidebar{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position:fixed;top:0;left:0;bottom:0;width:82%;max-width:320px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:var(--panel);border-right:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>transform:translateX(-105%);transition:transform .25s cubic-bezier(.4,0,.2,1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>z-index:41;display:flex;flex-direction:column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding-top:var(--safe-top);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#sidebar.show{transform:translateX(0);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#sidebar-head{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:16px 16px 10px 16px;border-bottom:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#sidebar-head h2{margin:0 0 2px 0;font-size:19px;letter-spacing:.2px;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#sidebar-head p{margin:0;font-size:12px;color:var(--muted);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#ex-list{flex:1;overflow-y:auto;padding:8px;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.ex-item{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>display:flex;align-items:center;gap:10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:11px 10px;border-radius:12px;margin-bottom:6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:var(--panel-2);border:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.ex-item.current{border-color:var(--accent);background:var(--panel-3);}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.ex-name{flex:1;min-width:0;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.ex-sub{font-size:10.5px;color:var(--muted);display:block;margin-top:1px;font-weight:400;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.ex-actions{display:flex;gap:4px;flex:none;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.mini-btn{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>width:30px;height:30px;border-radius:8px;background:var(--panel);border:1px solid var(--hairline);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color:var(--text);font-size:14px;display:flex;align-items:center;justify-content:center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#new-ex-btn{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>margin:8px;padding:13px;border-radius:12px;background:var(--accent);color:var(--accent-ink);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-weight:800;font-size:14px;border:none;text-align:center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#sidebar-foot{padding:10px 16px calc(14px + var(--safe-bottom)) 16px;font-size:10.5px;color:var(--muted);border-top:1px solid var(--hairline);}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>/* toast */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#toast{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>position:fixed;left:50%;top:calc(var(--safe-top) + 54px);transform:translateX(-50%) translateY(-10px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>background:var(--panel-3);border:1px solid var(--hairline);color:var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>padding:9px 16px;border-radius:20px;font-size:13px;font-weight:600;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>z-index:60;opacity:0;pointer-events:none;transition:all .25s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div id="app"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="topbar"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="topbar-row1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="icon-btn" id="btn-menu" title="Exercises"&gt;☰&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div id="exercise-title"&gt;Untitled Drill&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="icon-btn" id="btn-export" title="Export PNG"&gt;⇪&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="topbar-row2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="pill-group"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="pill" id="btn-half" data-mode="half"&gt;Half&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="pill" id="btn-full" data-mode="full"&gt;Full&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="icon-btn" id="btn-undo" title="Undo" style="font-size:15px;"&gt;↺&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button class="icon-btn" id="btn-clear" title="Clear field" style="font-size:15px;"&gt;🧹&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div id="zoom-group"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button id="zoom-out"&gt;−&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span id="zoom-label"&gt;100%&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button id="zoom-in"&gt;+&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="canvas-wrap"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;canvas id="field"&gt;&lt;/canvas&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="hint"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="contextbar"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="toolbar"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="tool active" data-tool="select"&gt;&lt;span class="glyph"&gt;↖&lt;/span&gt;&lt;span class="lbl"&gt;Select&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="tool" data-tool="player"&gt;&lt;span class="glyph"&gt;●&lt;/span&gt;&lt;span class="lbl"&gt;Player&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="tool" data-tool="cone"&gt;&lt;span class="glyph"&gt;▲&lt;/span&gt;&lt;span class="lbl"&gt;Cone&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="tool" data-tool="ball"&gt;&lt;span class="glyph"&gt;○&lt;/span&gt;&lt;span class="lbl"&gt;Ball&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="tool" data-tool="goal"&gt;&lt;span class="glyph"&gt;▭&lt;/span&gt;&lt;span class="lbl"&gt;Goal&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="tool" data-tool="arrow"&gt;&lt;span class="glyph"&gt;↗&lt;/span&gt;&lt;span class="lbl"&gt;Arrow&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="tool" data-tool="draw"&gt;&lt;span class="glyph"&gt;✎&lt;/span&gt;&lt;span class="lbl"&gt;Draw&lt;/span&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div id="sidebar-backdrop"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div id="sidebar"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="sidebar-head"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Exercises&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Saved on this device&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="ex-list"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button id="new-ex-btn"&gt;+ New Exercise&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="sidebar-foot"&gt;HockeyTraining Planner &amp;middot; local storage only&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div id="toast"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">(function(){</span></p>
+<p class="p1"><span class="s1">"use strict";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">const FIELD_W = 500;</span></p>
+<p class="p1"><span class="s1">const FIELD_H_FULL = 800;</span></p>
+<p class="p1"><span class="s1">const FIELD_H_HALF = 400;</span></p>
+<p class="p1"><span class="s1">const COLORS = { blue:'#3f7de0', red:'#e0453f', yellow:'#e0c23f' };</span></p>
+<p class="p1"><span class="s1">const STORE_KEY_EX = 'htp_exercises_v1';</span></p>
+<p class="p1"><span class="s1">const STORE_KEY_CUR = 'htp_current_v1';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">let exercises = [];</span></p>
+<p class="p1"><span class="s1">let currentId = null;</span></p>
+<p class="p1"><span class="s1">let tool = 'select';</span></p>
+<p class="p1"><span class="s1">let playerColor = 'blue';</span></p>
+<p class="p1"><span class="s1">let drawColor = '#f3f7f1';</span></p>
+<p class="p1"><span class="s1">let drawDashed = false;</span></p>
+<p class="p1"><span class="s1">let arrowDashed = false;</span></p>
+<p class="p1"><span class="s1">let arrowColor = '#f3f7f1';</span></p>
+<p class="p1"><span class="s1">let selectedId = null;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">let scaleZoom = 1;</span></p>
+<p class="p1"><span class="s1">let baseScale = 1;</span></p>
+<p class="p1"><span class="s1">let panX = 0, panY = 0;</span></p>
+<p class="p1"><span class="s1">let dpr = Math.max(1, window.devicePixelRatio || 1);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">let activePointers = new Map();</span></p>
+<p class="p1"><span class="s1">let pinch = null;</span></p>
+<p class="p1"><span class="s1">let panState = null;</span></p>
+<p class="p1"><span class="s1">let dragItem = null;</span></p>
+<p class="p1"><span class="s1">let resizeState = null;</span></p>
+<p class="p1"><span class="s1">let rotateState = null;</span></p>
+<p class="p1"><span class="s1">let arrowHandleDrag = null;</span></p>
+<p class="p1"><span class="s1">let pendingArrow = null;</span></p>
+<p class="p1"><span class="s1">let pendingStroke = null;</span></p>
+<p class="p1"><span class="s1">let lastTap = {id:null, t:0};</span></p>
+<p class="p1"><span class="s1">let history = [];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">const canvas = document.getElementById('field');</span></p>
+<p class="p1"><span class="s1">const ctx = canvas.getContext('2d');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function uid(){ return Math.random().toString(36).slice(2,10) + Date.now().toString(36); }</span></p>
+<p class="p1"><span class="s1">function defaultExercise(name){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return { id: uid(), name: name || 'New Exercise', mode:'full', items: [], strokes: [] };</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function loadAll(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>try{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const raw = localStorage.getItem(STORE_KEY_EX);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>exercises = raw ? JSON.parse(raw) : [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}catch(e){ exercises = []; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!exercises.length){ exercises.push(defaultExercise('Warm-up 1')); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>currentId = localStorage.getItem(STORE_KEY_CUR) || exercises[0].id;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!exercises.find(e=&gt;e.id===currentId)) currentId = exercises[0].id;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function saveAll(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>localStorage.setItem(STORE_KEY_EX, JSON.stringify(exercises));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>localStorage.setItem(STORE_KEY_CUR, currentId);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function current(){ return exercises.find(e=&gt;e.id===currentId); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function snapshot(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>history.push(JSON.stringify({items:c.items, strokes:c.strokes}));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(history.length &gt; 25) history.shift();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">function undo(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!history.length){ toast('Nothing to undo'); return; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const data = JSON.parse(history.pop());</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>c.items = data.items; c.strokes = data.strokes;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>selectedId = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveAll(); render(); renderContextBar();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">let toastTimer=null;</span></p>
+<p class="p1"><span class="s1">function toast(msg){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const el = document.getElementById('toast');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>el.textContent = msg;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>el.classList.add('show');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>clearTimeout(toastTimer);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>toastTimer = setTimeout(()=&gt;el.classList.remove('show'), 1600);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function fieldHeight(mode){ return mode==='full' ? FIELD_H_FULL : FIELD_H_HALF; }</span></p>
+<p class="p1"><span class="s1">function circlePt(cx,cy,r,deg){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const a = deg*Math.PI/180;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return {x:cx+r*Math.cos(a), y:cy+r*Math.sin(a)};</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawD(ctx, centerX, goalY, R, halfW, bulge){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const lp = {x:centerX-halfW, y:goalY};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const rp = {x:centerX+halfW, y:goalY};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(bulge === -1){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.moveTo(lp.x - R, lp.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.arc(lp.x, lp.y, R, Math.PI, 1.5*Math.PI, false);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.lineTo(rp.x, rp.y - R);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.arc(rp.x, rp.y, R, 1.5*Math.PI, 2*Math.PI, false);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.lineTo(rp.x, rp.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.lineTo(lp.x, lp.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.moveTo(lp.x - R, lp.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.arc(lp.x, lp.y, R, Math.PI, 0.5*Math.PI, true);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.lineTo(rp.x, rp.y + R);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.arc(rp.x, rp.y, R, 0.5*Math.PI, 0, true);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.lineTo(rp.x, rp.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.lineTo(lp.x, lp.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.closePath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.stroke();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawGoalCage(ctx, centerX, goalY, halfW, dir){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const depth = 14;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeStyle = '#dfe9e2';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth = 2.4;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.moveTo(centerX-halfW, goalY);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineTo(centerX-halfW, goalY - dir*depth);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineTo(centerX+halfW, goalY - dir*depth);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineTo(centerX+halfW, goalY);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth = 0.8;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeStyle = 'rgba(223,233,226,0.45)';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const steps = 6;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>for(let i=1;i&lt;steps;i++){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const gx = centerX - halfW + (2*halfW)*(i/steps);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.moveTo(gx, goalY);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.lineTo(gx, goalY - dir*depth);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawField(ctx, mode){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const fh = fieldHeight(mode);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const margin = 12;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = '#0f4326';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillRect(0,0,FIELD_W,fh);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const bands = mode==='full' ? 16 : 8;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const bandH = fh/bands;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>for(let i=0;i&lt;bands;i++){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.fillStyle = i%2===0 ? 'rgba(255,255,255,0.025)' : 'rgba(0,0,0,0.05)';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.fillRect(0, i*bandH, FIELD_W, bandH);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth = 2.2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeStyle = '#f3f7f1';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineCap = 'butt';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeRect(margin, margin, FIELD_W-2*margin, fh-2*margin);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const R = 118;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const halfGoalW = 16;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const centerX = FIELD_W/2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(mode === 'full'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.moveTo(margin, fh/2); ctx.lineTo(FIELD_W-margin, fh/2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.arc(centerX, fh/2, 3.2, 0, Math.PI*2); ctx.fillStyle='#f3f7f1'; ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const y23a = margin + (fh-2*margin)*0.25;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const y23b = fh - margin - (fh-2*margin)*0.25;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[y23a, y23b].forEach(y=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ctx.setLineDash([9,7]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ctx.beginPath(); ctx.moveTo(margin,y); ctx.lineTo(FIELD_W-margin,y); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawD(ctx, centerX, fh-margin, R, halfGoalW, -1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawD(ctx, centerX, margin, R, halfGoalW, +1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawGoalCage(ctx, centerX, fh-margin, halfGoalW, -1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawGoalCage(ctx, centerX, margin, halfGoalW, +1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.arc(centerX, fh-margin-58, 2.6,0,Math.PI*2); ctx.fillStyle='#f3f7f1'; ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.arc(centerX, margin+58, 2.6,0,Math.PI*2); ctx.fillStyle='#f3f7f1'; ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.setLineDash([9,7]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.moveTo(margin, margin); ctx.lineTo(FIELD_W-margin, margin); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const y23 = margin + (fh-2*margin)*0.42;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.setLineDash([9,7]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.moveTo(margin,y23); ctx.lineTo(FIELD_W-margin,y23); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawD(ctx, centerX, fh-margin, R, halfGoalW, -1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawGoalCage(ctx, centerX, fh-margin, halfGoalW, -1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.arc(centerX, fh-margin-58, 2.6,0,Math.PI*2); ctx.fillStyle='#f3f7f1'; ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function itemRadius(item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>switch(item.type){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case 'player': return 20*item.size;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case 'cone': return 15*item.size;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case 'ball': return 9*item.size;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case 'goal': return 24*item.size;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>default: return 16*item.size;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawPlayer(ctx,item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const R = itemRadius(item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.translate(item.x,item.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath(); ctx.ellipse(0,R*0.85,R*0.85,R*0.28,0,0,Math.PI*2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle='rgba(0,0,0,0.28)'; ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath(); ctx.arc(0,0,R,0,Math.PI*2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = COLORS[item.color] || item.color;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth = Math.max(1.6, R*0.09);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeStyle = '#0b1310';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.rotate((item.rotation||0)*Math.PI/180);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.moveTo(0,-R*1.28);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineTo(R*0.28,-R*0.86);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineTo(-R*0.28,-R*0.86);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.closePath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = '#f3f7f1';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(item.label){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.fillStyle = '#0b1310';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.font = `800 ${Math.max(10,R*0.95)}px -apple-system, sans-serif`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.textAlign='center'; ctx.textBaseline='middle';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.fillText(String(item.label).slice(0,3), 0, R*0.06);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawCone(ctx,item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const R = itemRadius(item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.translate(item.x,item.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.rotate((item.rotation||0)*Math.PI/180);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.moveTo(0,-R);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineTo(R*0.82,R*0.75);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineTo(-R*0.82,R*0.75);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.closePath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = '#ff7a1a';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth = 1.6; ctx.strokeStyle='#8f3d00'; ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.moveTo(-R*0.46,R*0.2); ctx.lineTo(R*0.46,R*0.2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeStyle='#fff'; ctx.lineWidth=Math.max(1.2,R*0.16); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawBall(ctx,item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const R = itemRadius(item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.translate(item.x,item.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath(); ctx.arc(0,0,R,0,Math.PI*2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle='#f6f2e6'; ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth=1.2; ctx.strokeStyle='#8a7d55'; ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeStyle='rgba(138,125,85,0.7)'; ctx.lineWidth=0.9;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath(); ctx.arc(0,0,R*0.55,0.3,2.6); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath(); ctx.arc(0,0,R*0.55,Math.PI+0.3,Math.PI+2.6); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawGoal(ctx,item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const s = item.size;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const w = 46*s, h = 20*s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.translate(item.x,item.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.rotate((item.rotation||0)*Math.PI/180);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle='rgba(243,247,241,0.16)';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillRect(-w/2,-h/2,w,h);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth=2.4; ctx.strokeStyle='#f3f7f1';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeRect(-w/2,-h/2,w,h);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth=0.8; ctx.strokeStyle='rgba(243,247,241,0.55)';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cols=6;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>for(let i=1;i&lt;cols;i++){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const gx = -w/2 + w*(i/cols);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.moveTo(gx,-h/2); ctx.lineTo(gx,h/2); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath(); ctx.moveTo(-w/2,0); ctx.lineTo(w/2,0); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function arrowGeom(item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const mx=(item.x1+item.x2)/2, my=(item.y1+item.y2)/2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const dx=item.x2-item.x1, dy=item.y2-item.y1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const len=Math.hypot(dx,dy)||1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const nx=-dy/len, ny=dx/len;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const curve = item.curve||0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cpx = mx + nx*curve, cpy = my + ny*curve;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return {mx,my,cpx,cpy};</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawArrow(ctx,item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const {cpx,cpy} = arrowGeom(item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeStyle = item.color;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = item.color;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth = 3.4;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineCap='round';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(item.dashed) ctx.setLineDash([2,10]); else ctx.setLineDash([]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.moveTo(item.x1,item.y1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.quadraticCurveTo(cpx,cpy,item.x2,item.y2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.setLineDash([]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const ang = Math.atan2(item.y2-cpy, item.x2-cpx);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const ah = 11;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.moveTo(item.x2, item.y2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineTo(item.x2 - ah*Math.cos(ang-0.4), item.y2 - ah*Math.sin(ang-0.4));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineTo(item.x2 - ah*Math.cos(ang+0.4), item.y2 - ah*Math.sin(ang+0.4));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.closePath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawItem(ctx,item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(item.type==='player') drawPlayer(ctx,item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else if(item.type==='cone') drawCone(ctx,item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else if(item.type==='ball') drawBall(ctx,item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else if(item.type==='goal') drawGoal(ctx,item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>else if(item.type==='arrow') drawArrow(ctx,item);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">let handles = null;</span></p>
+<p class="p1"><span class="s1">function computeHandles(item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!item) return null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(item.type==='arrow'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const g = arrowGeom(item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return { type:'arrow', start:{x:item.x1,y:item.y1}, end:{x:item.x2,y:item.y2}, curveH:{x:g.cpx,y:g.cpy} };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const R = itemRadius(item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const resize = circlePt(item.x,item.y, R*1.42, 45);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const rotate = {x:item.x, y:item.y - R - 26};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return { type:'basic', resize, rotate };</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function effScale(){ return baseScale*scaleZoom; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawHandlesOverlay(ctx,item){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!item || !handles) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth = 1.4/effScale();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.strokeStyle = 'rgba(255,138,61,0.95)';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.setLineDash([5/effScale(),4/effScale()]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(handles.type==='basic'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const R = itemRadius(item)*1.42;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.arc(item.x,item.y,R,0,Math.PI*2); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.setLineDash([]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.moveTo(item.x,item.y); ctx.lineTo(handles.rotate.x,handles.rotate.y); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawHandleDot(ctx,handles.rotate.x,handles.rotate.y,'#ff8a3d','↻');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawHandleDot(ctx,handles.resize.x,handles.resize.y,'#4d8dff','⤢');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.setLineDash([]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawHandleDot(ctx,handles.start.x,handles.start.y,'#ff8a3d','');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawHandleDot(ctx,handles.end.x,handles.end.y,'#ff8a3d','');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>drawHandleDot(ctx,handles.curveH.x,handles.curveH.y,'#4d8dff','');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawHandleDot(ctx,x,y,color,glyph){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const r = 11/effScale();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = color; ctx.fill();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.lineWidth = 1.5/effScale(); ctx.strokeStyle='#0b1310'; ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(glyph){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.fillStyle='#0b1310';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.font = `${11/effScale()}px sans-serif`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.textAlign='center'; ctx.textBaseline='middle';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.fillText(glyph,x,y+0.5/effScale());</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function drawScene(ctx, mode, items, strokes){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>drawField(ctx, mode);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>strokes.forEach(s=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(s.points.length&lt;2) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.strokeStyle=s.color; ctx.lineWidth=3.2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.lineJoin='round'; ctx.lineCap='round';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(s.dashed) ctx.setLineDash([2,9]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.moveTo(s.points[0].x, s.points[0].y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>for(let i=1;i&lt;s.points.length;i++) ctx.lineTo(s.points[i].x, s.points[i].y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>items.forEach(it=&gt;drawItem(ctx,it));</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function fitField(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const rect = canvas.getBoundingClientRect();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>canvas.width = Math.round(rect.width*dpr);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>canvas.height = Math.round(rect.height*dpr);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const fh = fieldHeight(c.mode);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>baseScale = Math.min(rect.width/(FIELD_W+24), rect.height/(fh+24));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>panX = (rect.width - FIELD_W*effScale())/2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>panY = (rect.height - fh*effScale())/2;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function screenToField(clientX, clientY){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const rect = canvas.getBoundingClientRect();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const cx = clientX-rect.left, cy = clientY-rect.top;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return { x:(cx-panX)/effScale(), y:(cy-panY)/effScale() };</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function render(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const rect = canvas.getBoundingClientRect();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.setTransform(dpr,0,0,dpr,0,0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.clearRect(0,0,rect.width,rect.height);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillStyle = '#0b1310';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.fillRect(0,0,rect.width,rect.height);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.translate(panX,panY);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.scale(effScale(),effScale());</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>drawScene(ctx, c.mode, c.items, c.strokes);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(pendingArrow){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.strokeStyle = arrowColor; ctx.lineWidth=3;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(arrowDashed) ctx.setLineDash([2,10]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath(); ctx.moveTo(pendingArrow.x1,pendingArrow.y1); ctx.lineTo(pendingArrow.x2,pendingArrow.y2); ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(pendingStroke &amp;&amp; pendingStroke.points.length&gt;1){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.save();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.strokeStyle=pendingStroke.color; ctx.lineWidth=3.2; ctx.lineJoin='round'; ctx.lineCap='round';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(pendingStroke.dashed) ctx.setLineDash([2,9]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.beginPath();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.moveTo(pendingStroke.points[0].x,pendingStroke.points[0].y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>for(let i=1;i&lt;pendingStroke.points.length;i++) ctx.lineTo(pendingStroke.points[i].x,pendingStroke.points[i].y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.stroke();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const sel = c.items.find(i=&gt;i.id===selectedId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>handles = computeHandles(sel);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(sel) drawHandlesOverlay(ctx, sel);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>ctx.restore();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('zoom-label').textContent = Math.round(scaleZoom*100)+'%';</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function addItem(type, x, y){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>snapshot();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let item = { id:uid(), type, x, y, size:1, rotation:0 };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(type==='player'){ item.color = playerColor; item.label=''; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(type==='goal'){ item.color='#fff'; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>c.items.push(item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>selectedId = item.id;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveAll();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return item;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function hitTestItems(items, x, y){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>for(let i=items.length-1;i&gt;=0;i--){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const it = items[i];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let r;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(it.type==='arrow'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const g = arrowGeom(it);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let best = Infinity;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for(let t=0;t&lt;=1;t+=0.05){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const px = (1-t)*(1-t)*it.x1 + 2*(1-t)*t*g.cpx + t*t*it.x2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const py = (1-t)*(1-t)*it.y1 + 2*(1-t)*t*g.cpy + t*t*it.y2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>best = Math.min(best, Math.hypot(px-x,py-y));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(best &lt; 14/effScale()) return it;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>continue;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>r = itemRadius(it)*1.15;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(Math.hypot(it.x-x, it.y-y) &lt;= r) return it;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return null;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">canvas.addEventListener('pointerdown', (e)=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>canvas.setPointerCapture(e.pointerId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>activePointers.set(e.pointerId, {x:e.clientX, y:e.clientY});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(activePointers.size === 2){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const pts = [...activePointers.values()];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const rect = canvas.getBoundingClientRect();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>pinch = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>startDist: Math.hypot(pts[0].x-pts[1].x, pts[0].y-pts[1].y),</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>startScale: scaleZoom,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>cx: (pts[0].x+pts[1].x)/2 - rect.left,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>cy: (pts[0].y+pts[1].y)/2 - rect.top,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>startPanX: panX, startPanY: panY</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>panState = null; dragItem=null; resizeState=null; rotateState=null; arrowHandleDrag=null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>pendingArrow=null; pendingStroke=null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(activePointers.size &gt; 2) return;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const fp = screenToField(e.clientX, e.clientY);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(tool === 'select'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const sel = c.items.find(i=&gt;i.id===selectedId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const hr = 16/effScale();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(sel &amp;&amp; handles){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(handles.type==='basic'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(Math.hypot(fp.x-handles.resize.x, fp.y-handles.resize.y) &lt; hr){ resizeState = {id:sel.id, baseDist:Math.hypot(sel.x-handles.resize.x,sel.y-handles.resize.y), baseSize:sel.size}; return; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(Math.hypot(fp.x-handles.rotate.x, fp.y-handles.rotate.y) &lt; hr){ rotateState = {id:sel.id}; return; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(Math.hypot(fp.x-handles.start.x, fp.y-handles.start.y) &lt; hr){ arrowHandleDrag={id:sel.id, which:'start'}; return; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(Math.hypot(fp.x-handles.end.x, fp.y-handles.end.y) &lt; hr){ arrowHandleDrag={id:sel.id, which:'end'}; return; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(Math.hypot(fp.x-handles.curveH.x, fp.y-handles.curveH.y) &lt; hr){ arrowHandleDrag={id:sel.id, which:'curve'}; return; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const hit = hitTestItems(c.items, fp.x, fp.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(hit){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const now = Date.now();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(hit.type==='player' &amp;&amp; lastTap.id===hit.id &amp;&amp; now-lastTap.t &lt; 350){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const val = prompt('Jersey number / label', hit.label||'');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(val !== null){ snapshot(); hit.label = val.slice(0,3); saveAll(); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>lastTap = {id:null,t:0};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>lastTap = {id:hit.id, t:now};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>selectedId = hit.id;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>snapshot();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>dragItem = { id:hit.id, offX: fp.x-hit.x, offY: fp.y-hit.y };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>renderContextBar(); render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>selectedId = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>panState = { startX:e.clientX, startY:e.clientY, startPanX:panX, startPanY:panY };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>renderContextBar(); render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(['player','cone','ball','goal'].includes(tool)){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>addItem(tool, fp.x, fp.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>tool = 'select';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>setActiveToolUI();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>renderContextBar();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(tool === 'arrow'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>pendingArrow = { x1:fp.x, y1:fp.y, x2:fp.x, y2:fp.y };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(tool === 'draw'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>pendingStroke = { points:[fp], color:drawColor, dashed:drawDashed };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">canvas.addEventListener('pointermove', (e)=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!activePointers.has(e.pointerId)) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>activePointers.set(e.pointerId, {x:e.clientX, y:e.clientY});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(activePointers.size===2 &amp;&amp; pinch){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const pts = [...activePointers.values()];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const d = Math.hypot(pts[0].x-pts[1].x, pts[0].y-pts[1].y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const newScale = Math.min(3, Math.max(0.4, pinch.startScale * (d/pinch.startDist)));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const factor = newScale/pinch.startScale;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>scaleZoom = newScale;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>panX = pinch.cx - (pinch.cx - pinch.startPanX) * factor;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>panY = pinch.cy - (pinch.cy - pinch.startPanY) * factor;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const fp = screenToField(e.clientX, e.clientY);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(panState){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>panX = panState.startPanX + (e.clientX - panState.startX);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>panY = panState.startPanY + (e.clientY - panState.startY);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(resizeState){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const it = c.items.find(i=&gt;i.id===resizeState.id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(it){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const distNow = Math.hypot(fp.x-it.x, fp.y-it.y);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>it.size = Math.max(0.5, Math.min(2.5, resizeState.baseSize * (distNow/resizeState.baseDist)));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(rotateState){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const it = c.items.find(i=&gt;i.id===rotateState.id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(it){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const rad = Math.atan2(fp.y - it.y, fp.x - it.x);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>it.rotation = Math.round((rad * 180 / Math.PI) + 90);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(arrowHandleDrag){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const it = c.items.find(i=&gt;i.id===arrowHandleDrag.id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(it){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(arrowHandleDrag.which==='start'){ it.x1=fp.x; it.y1=fp.y; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>else if(arrowHandleDrag.which==='end'){ it.x2=fp.x; it.y2=fp.y; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>else if(arrowHandleDrag.which==='curve'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const mx=(it.x1+it.x2)/2, my=(it.y1+it.y2)/2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const dx=it.x2-it.x1, dy=it.y2-it.y1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const len=Math.hypot(dx,dy)||1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const nx=-dy/len, ny=dx/len;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>it.curve = (fp.x-mx)*nx + (fp.y-my)*ny;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(dragItem){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const it = c.items.find(i=&gt;i.id===dragItem.id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(it){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>it.x = fp.x - dragItem.offX;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>it.y = fp.y - dragItem.offY;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(pendingArrow){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>pendingArrow.x2 = fp.x;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>pendingArrow.y2 = fp.y;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(pendingStroke){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>pendingStroke.points.push(fp);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function endPointer(e){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>activePointers.delete(e.pointerId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(activePointers.size &lt; 2) pinch = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(activePointers.size === 0){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(panState || dragItem || resizeState || rotateState || arrowHandleDrag){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>saveAll();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(pendingArrow){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>snapshot();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const dx = pendingArrow.x2 - pendingArrow.x1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const dy = pendingArrow.y2 - pendingArrow.y1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(Math.hypot(dx,dy) &gt; 12){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>c.items.push({</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>id:uid(), type:'arrow',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>x1:pendingArrow.x1, y1:pendingArrow.y1,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>x2:pendingArrow.x2, y2:pendingArrow.y2,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>curve:0, color:arrowColor, dashed:arrowDashed</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>saveAll();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>pendingArrow = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(pendingStroke){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>snapshot();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(pendingStroke.points.length &gt; 2){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>c.strokes.push(pendingStroke);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>saveAll();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>pendingStroke = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>panState = null; dragItem = null; resizeState = null; rotateState = null; arrowHandleDrag = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">canvas.addEventListener('pointerup', endPointer);</span></p>
+<p class="p1"><span class="s1">canvas.addEventListener('pointercancel', endPointer);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function setActiveToolUI(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.querySelectorAll('.tool').forEach(b=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>b.classList.toggle('active', b.getAttribute('data-tool') === tool);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">document.querySelectorAll('.tool').forEach(btn=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>btn.addEventListener('click', ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>tool = btn.getAttribute('data-tool');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>setActiveToolUI();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const hints = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>select: '',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>player: 'Tap anywhere to place a Player',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>cone: 'Tap anywhere to place a Cone',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ball: 'Tap &amp; place a Ball',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>goal: 'Tap to place a Goal',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>arrow: 'Drag to draw an arrow',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>draw: 'Draw freehand lines'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('hint').textContent = hints[tool] || '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>renderContextBar();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function renderContextBar(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const bar = document.getElementById('contextbar');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const sel = c.items.find(i=&gt;i.id===selectedId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>bar.innerHTML = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(tool==='player'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bar.classList.add('show');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>Object.keys(COLORS).forEach(col=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const s = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>s.className = `swatch ${playerColor===col?'selected':''}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>s.style.background = COLORS[col];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>s.onclick = ()=&gt;{ playerColor=col; renderContextBar(); };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>bar.appendChild(s);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>} else if(tool==='arrow'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bar.classList.add('show');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>['#f3f7f1','#ff8a3d','#4d8dff','#ff5a5f'].forEach(col=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const s = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>s.className = `swatch ${arrowColor===col?'selected':''}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>s.style.background = col;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>s.onclick = ()=&gt;{ arrowColor=col; renderContextBar(); };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>bar.appendChild(s);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const dashBtn = document.createElement('button');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>dashBtn.className = `ctx-btn ${arrowDashed?'on':''}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>dashBtn.textContent = 'Dashed';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>dashBtn.onclick = ()=&gt;{ arrowDashed=!arrowDashed; renderContextBar(); };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bar.appendChild(dashBtn);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>} else if(tool==='draw'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bar.classList.add('show');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>['#f3f7f1','#ff8a3d','#4d8dff','#ff5a5f'].forEach(col=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const s = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>s.className = `swatch ${drawColor===col?'selected':''}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>s.style.background = col;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>s.onclick = ()=&gt;{ drawColor=col; renderContextBar(); };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>bar.appendChild(s);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const dashBtn = document.createElement('button');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>dashBtn.className = `ctx-btn ${drawDashed?'on':''}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>dashBtn.textContent = 'Dashed';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>dashBtn.onclick = ()=&gt;{ drawDashed=!drawDashed; renderContextBar(); };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bar.appendChild(dashBtn);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>} else if(sel){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bar.classList.add('show');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(sel.type==='player'){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>['blue','red','yellow'].forEach(col=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const s = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>s.className = `swatch ${sel.color===col?'selected':''}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>s.style.background = COLORS[col];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>s.onclick = ()=&gt;{ snapshot(); sel.color=col; saveAll(); renderContextBar(); render(); };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>bar.appendChild(s);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lblBtn = document.createElement('button');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>lblBtn.className = 'ctx-btn';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>lblBtn.textContent = 'Label';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>lblBtn.onclick = ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const val = prompt('Jersey number / label', sel.label||'');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(val!==null){ snapshot(); sel.label=val.slice(0,3); saveAll(); render(); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>bar.appendChild(lblBtn);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const delBtn = document.createElement('button');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>delBtn.className = 'ctx-btn danger';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>delBtn.textContent = 'Delete';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>delBtn.onclick = ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>snapshot();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>c.items = c.items.filter(i=&gt;i.id!==selectedId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>selectedId = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>saveAll(); renderContextBar(); render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bar.appendChild(delBtn);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>bar.classList.remove('show');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function updateModeUI(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('btn-half').classList.toggle('active', c.mode==='half');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('btn-full').classList.toggle('active', c.mode==='full');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById('exercise-title').textContent = c.name;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">document.getElementById('btn-half').onclick = ()=&gt;{ snapshot(); current().mode='half'; saveAll(); fitField(); updateModeUI(); render(); };</span></p>
+<p class="p1"><span class="s1">document.getElementById('btn-full').onclick = ()=&gt;{ snapshot(); current().mode='full'; saveAll(); fitField(); updateModeUI(); render(); };</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">document.getElementById('zoom-in').onclick = ()=&gt;{ scaleZoom = Math.min(3, scaleZoom+0.25); render(); };</span></p>
+<p class="p1"><span class="s1">document.getElementById('zoom-out').onclick = ()=&gt;{ scaleZoom = Math.max(0.4, scaleZoom-0.25); render(); };</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">document.getElementById('btn-undo').onclick = undo;</span></p>
+<p class="p1"><span class="s1">document.getElementById('btn-clear').onclick = ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(confirm('Clear all items on this field?')){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>snapshot();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>c.items = []; c.strokes = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>selectedId = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>saveAll(); renderContextBar(); render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">document.getElementById('exercise-title').onclick = ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const name = prompt('Exercise name:', c.name);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(name){ c.name = name; saveAll(); updateModeUI(); renderSidebar(); }</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">const sidebar = document.getElementById('sidebar');</span></p>
+<p class="p1"><span class="s1">const backdrop = document.getElementById('sidebar-backdrop');</span></p>
+<p class="p1"><span class="s1">function openSidebar(){ renderSidebar(); sidebar.classList.add('show'); backdrop.classList.add('show'); }</span></p>
+<p class="p1"><span class="s1">function closeSidebar(){ sidebar.classList.remove('show'); backdrop.classList.remove('show'); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">document.getElementById('btn-menu').onclick = openSidebar;</span></p>
+<p class="p1"><span class="s1">backdrop.onclick = closeSidebar;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function renderSidebar(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const list = document.getElementById('ex-list');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>list.innerHTML = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>exercises.forEach(ex=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const item = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>item.className = `ex-item ${ex.id===currentId?'current':''}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>item.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div style="flex:1;min-width:0;cursor:pointer;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="ex-name"&gt;${ex.name}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="ex-sub"&gt;${ex.mode.toUpperCase()} field &amp;middot; ${ex.items.length} items&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="ex-actions"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="mini-btn" title="Duplicate"&gt;📋&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="mini-btn" title="Delete"&gt;🗑&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>item.querySelector('div').onclick = ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>currentId = ex.id;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>selectedId = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>saveAll(); closeSidebar(); fitField(); updateModeUI(); renderContextBar(); render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const btns = item.querySelectorAll('.mini-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>btns[0].onclick = (e)=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>e.stopPropagation();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const clone = JSON.parse(JSON.stringify(ex));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>clone.id = uid();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>clone.name = ex.name + ' (Copy)';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>exercises.push(clone);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>currentId = clone.id;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>saveAll(); renderSidebar(); fitField(); updateModeUI(); render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>btns[1].onclick = (e)=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>e.stopPropagation();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(exercises.length&lt;=1){ toast('Keep at least one exercise'); return; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(confirm(`Delete "${ex.name}"?`)){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>exercises = exercises.filter(x=&gt;x.id!==ex.id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(currentId===ex.id) currentId = exercises[0].id;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>saveAll(); renderSidebar(); fitField(); updateModeUI(); render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>list.appendChild(item);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">document.getElementById('new-ex-btn').onclick = ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const ex = defaultExercise('Exercise ' + (exercises.length+1));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>exercises.push(ex);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>currentId = ex.id;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>saveAll(); renderSidebar(); closeSidebar(); fitField(); updateModeUI(); renderContextBar(); render();</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">document.getElementById('btn-export').onclick = ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const c = current();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const exportCanvas = document.createElement('canvas');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const fh = fieldHeight(c.mode);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const scale = 3;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>exportCanvas.width = FIELD_W * scale;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>exportCanvas.height = fh * scale;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const eCtx = exportCanvas.getContext('2d');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>eCtx.scale(scale, scale);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>drawScene(eCtx, c.mode, c.items, c.strokes);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const dataUrl = exportCanvas.toDataURL('image/png');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const win = window.open();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>win.document.write(`&lt;title&gt;${c.name}&lt;/title&gt;&lt;img src="${dataUrl}" style="max-width:100%;height:auto;display:block;margin:auto;"/&gt;&lt;p style="text-align:center;font-family:sans-serif;color:#555;"&gt;Long-press image to save to Photos&lt;/p&gt;`);</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">window.addEventListener('resize', ()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>fitField();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>render();</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">loadAll();</span></p>
+<p class="p1"><span class="s1">fitField();</span></p>
+<p class="p1"><span class="s1">updateModeUI();</span></p>
+<p class="p1"><span class="s1">render();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">})();</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
